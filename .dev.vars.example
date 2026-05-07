@@ -1,0 +1,4 @@
+# Local dev secrets — copy this to .dev.vars (gitignored) and fill in real values
+# Used by `wrangler dev --local`
+
+SECRET=dev_secret_change_me

@@ -1,0 +1,28 @@
+name = "cbp-v2"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Uncomment to bind a KV namespace for auxiliary storage ──
+# [[kv_namespaces]]
+# binding = "PROXY_KV"
+# id      = "YOUR_KV_NAMESPACE_ID"   # fill in after `wrangler kv:namespace create PROXY_KV`
+
+[vars]
+# Override with a real random secret via:
+#   wrangler secret put SECRET
+# NEVER commit the real value here.
+SECRET = "CHANGE_ME_USE_WRANGLER_SECRET"
+
+# Optional: Route the worker to a custom domain
+# [[routes]]
+# pattern = "proxy.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+[build]
+command = ""
+
+# ── Environment overrides ──
+[env.production]
+name = "cbp-v2"
+vars = {}          # secrets are set via `wrangler secret put SECRET --env production`
