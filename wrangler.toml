@@ -12,7 +12,7 @@ compatibility_flags = ["nodejs_compat"]
 # Override with a real random secret via:
 #   wrangler secret put SECRET
 # NEVER commit the real value here.
-SECRET = "CHANGE_ME_USE_WRANGLER_SECRET"
+SECRET = "EgucmYfFNGwb5xonPr3UIWTdszRLayXthq12897eC46VMDOk"
 
 # Optional: Route the worker to a custom domain
 # [[routes]]
@@ -26,3 +26,11 @@ command = ""
 [env.production]
 name = "cbp-v2"
 vars = {}          # secrets are set via `wrangler secret put SECRET --env production`
+
+[observability.logs]
+enabled = false
+invocation_logs = true
+
+
+[browser]
+binding = "MYBROWSER"
